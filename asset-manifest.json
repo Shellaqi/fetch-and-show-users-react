@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fetch-and-show-users-react/static/css/main.8df25203.css",
+    "main.js": "/fetch-and-show-users-react/static/js/main.4ceeee3e.js",
+    "index.html": "/fetch-and-show-users-react/index.html",
+    "main.8df25203.css.map": "/fetch-and-show-users-react/static/css/main.8df25203.css.map",
+    "main.4ceeee3e.js.map": "/fetch-and-show-users-react/static/js/main.4ceeee3e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8df25203.css",
+    "static/js/main.4ceeee3e.js"
+  ]
+}
