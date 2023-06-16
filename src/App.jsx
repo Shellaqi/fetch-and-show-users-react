@@ -7,6 +7,7 @@ function App() {
   const [data, setData] = useState({
     results: []
   });
+
   const {results} = data;
 
   const [searchData, setSearchData] = useState('');
@@ -23,6 +24,7 @@ function App() {
         const rawData = await fetch('https://randomuser.me/api/?inc=name,picture&results=60');
         const data = await rawData.json();
         setData(data);
+        setUsers(data.results || []);
     })();
       
   },[])
@@ -30,7 +32,7 @@ function App() {
   useEffect(() => {
       const newUsers = results?.filter( user => {
         const fullName = `${user.name.title}${user.name.first}${user.name.last}`
-        if(fullName.toLowerCase().includes(searchData)) {
+        if(fullName.toLowerCase().replace(' ','').includes(searchData.replace(' ',''))) {
           return true;
         }
         return false;
@@ -52,7 +54,7 @@ function App() {
      />      
       <div className="users row">
         {          
-          (users || results)?.map((item, index) => {
+          users?.map((item, index) => {
             const finalname = `${item.name.title} ${item.name.first} ${item.name.last}`;
             return <div className="col-2 user" key={`item-${index}`}>
                 <img src={item.picture.thumbnail} 
